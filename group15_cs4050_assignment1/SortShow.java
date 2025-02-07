@@ -7,8 +7,10 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+import java.math.*;
 
 //The class that has all the sorts in it
 public class SortShow extends JPanel { 
@@ -253,7 +255,49 @@ public class SortShow extends JPanel {
 			lines_lengths[index] = tempArray[index];
 	}
 
-	//////////////////////////////////////////////////////////////////////	
+	//Radix Sort//////////////////////////////////////////////////////////////////////////
+	public void RadixSort(){
+		//getting the date and time when the radix sort starts
+		Calendar start = Calendar.getInstance();
+		//Using the radix sort to lines_lengths sort the array
+
+		// create and initialize 10 buckets
+		ArrayList<Integer>[] buckets = new ArrayList[10];
+		for(int i = 0; i < 10; i++){
+			buckets[i] = new ArrayList<>();
+		}
+
+		// iterate through 3 digits
+		for(int i = 0; i < 3; i++)
+		{
+			// add elements to the correct bucket
+			for(int j = 0; j < lines_lengths.length; j++){
+				int digit = (lines_lengths[j] / (int)Math.pow(10.0, (double)i)) % 10;
+				System.out.println("line length: " + lines_lengths[j] + " digit: " + digit);
+				buckets[digit].add(lines_lengths[j]);
+			}
+
+			// place elements back in array
+			int bucket = 0;
+			for(int j = 0; j < lines_lengths.length; j++)
+			{
+				if (buckets[bucket].isEmpty()){
+					bucket++;
+				}
+				lines_lengths[j] = buckets[bucket].remove(0);
+				paintComponent(this.getGraphics());
+				delay(50);
+			}
+		}
+
+		//getting the date and time when the radix sort ends
+		Calendar end = Calendar.getInstance();
+		//getting the time it took for the radix sort to execute
+		//subtracting the end time with the start time
+		SortGUI.radixTime = end.getTime().getTime() - start.getTime().getTime();
+	}
+
+	//Helper Functions////////////////////////////////////////////////////////////////////
 		
 		//This method resets the window to the scrambled lines display
 		public void reset(){
