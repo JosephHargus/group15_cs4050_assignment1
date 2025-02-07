@@ -22,7 +22,7 @@ public class SortShow extends JPanel {
 		public int[] scramble_lines;
 		//A temp Array that is used later for sorts
 		public int[] tempArray;
-		
+
 		//the default constructor for the SortShow class
 		public SortShow(){
 			//assigning the size for the lines_lengths below
@@ -68,12 +68,22 @@ public class SortShow extends JPanel {
 		}
 		
 		//The selectionSort method
-		public void SelectionSort(){
+		// implemented by Joseph Hargus
+		public void SelectionSort() {
 			//getting the date and time when the selection sort starts
 			Calendar start = Calendar.getInstance();
 			//Using the selection sort to lines_lengths sort the array
 
-			//You need to complete this part.
+			for(int i = 0; i < total_number_of_lines; i++){
+				// find smallest element
+				int smallest = getIndexOfSmallest(i, total_number_of_lines - 1);
+				// swap the smallest element with first unsorted element
+				swap(i, smallest);
+				// update GUI after each swap
+				paintComponent(this.getGraphics());
+				// delay
+				delay(50);
+			}
 
 			//getting the date and time when the selection sort ends
 			Calendar end = Calendar.getInstance();
@@ -83,11 +93,17 @@ public class SortShow extends JPanel {
 		}
 		
 		//this method gets the smallest element in the array of lines_lengths
+		// implemented by Joseph Hargus
 		public int getIndexOfSmallest(int first, int last){
+			int min_index = first;
 
-			//You need to complete this part.
+			for(int i = first; i <= last; i++){
+				if (lines_lengths[i] < lines_lengths[min_index]){
+					min_index = i;
+				}
+			}
 
-			return 1; //modify this line
+			return min_index;
 		}
 		
 	///////////////////////////////////////////////////////////////////////////////////
