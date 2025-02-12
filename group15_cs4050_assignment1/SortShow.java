@@ -107,7 +107,35 @@ public class SortShow extends JPanel {
 
 			return min_index;
 		}
-		
+	//Bubble Sort/////////////////////////////////////////////////////////////////////////////////
+		// implemented by Evan Trejo
+		public void BubleSort(){
+			//get time when starting
+			Calendar start = Calendar.getInstance();
+
+			//Outer loop for iterating all elements
+			for(int i=0; i < total_number_of_lines - 1; i++){
+				//After outer loop, last element i is sorted so reduce loop range
+				for(int j=0; j < total_number_of_lines - (i-1); j++){
+
+					//if current element is greater than next element
+					if(lines_lengths[j] > lines_length[j+1]){
+						//swap current element with the next
+						swap(j,j+1);
+						//redraw lines
+						paintComponent(this.getGraphics());
+						//delay
+						delay(10);
+					}
+			}
+
+			//get time when ending
+			Calendar end = Calendar.getInstance();
+
+			//calc time taken for bubble sort
+			SortGUI.bubbleTime = end.getTime().getTime() - start.getTime().getTime();
+		}
+
 	///////////////////////////////////////////////////////////////////////////////////
 		
 		//recursive merge sort method
@@ -144,7 +172,6 @@ public class SortShow extends JPanel {
 				
 		}
 		
-		//
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 		
