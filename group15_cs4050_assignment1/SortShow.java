@@ -136,6 +136,8 @@ public class SortShow extends JPanel {
 			}
 		}
 
+		//test
+
 		
 		//recursive merge sort method
 		public void R_Merge(int first, int mid, int last){
