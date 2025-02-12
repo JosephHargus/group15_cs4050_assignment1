@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
-import java.math.*;
+import java.util.Arrays;
 
 //The class that has all the sorts in it
 public class SortShow extends JPanel { 
@@ -255,7 +255,49 @@ public class SortShow extends JPanel {
 			lines_lengths[index] = tempArray[index];
 	}
 
+	//Quick Sort//////////////////////////////////////////////////////////////////////////
+	// implemented by Joseph Hargus
+	public void QuickSort(){
+		//getting the date and time when the quick sort starts
+		Calendar start = Calendar.getInstance();
+
+		InPlaceQuickSort(0, total_number_of_lines - 1);
+
+		//getting the date and time when the quick sort ends
+		Calendar end = Calendar.getInstance();
+		//getting the time it took for the quick sort to execute
+		//subtracting the end time with the start time
+		SortGUI.quickTime = end.getTime().getTime() - start.getTime().getTime();
+	}
+
+	// in place quick-sort
+	private void InPlaceQuickSort(int left, int right){
+		if (left >= right) return;
+
+		int p = lines_lengths[right]; //pivot
+		int l = left;
+		int r = right - 1;
+
+		while (l <= r) {
+			while (l <= r && lines_lengths[l] <= p) l++;
+			while(l <= r && lines_lengths[r] > p) r--;
+			if (l < r) {
+				swap(l, r);
+				paintComponent(this.getGraphics());
+				delay(50);
+			}
+		}
+		swap(l, right);
+		paintComponent(this.getGraphics());
+		delay(50);
+
+		InPlaceQuickSort(left, l-1);
+		InPlaceQuickSort(l+1, right);
+
+	}
+
 	//Radix Sort//////////////////////////////////////////////////////////////////////////
+	// implemented by Joseph Hargus
 	public void RadixSort(){
 		//getting the date and time when the radix sort starts
 		Calendar start = Calendar.getInstance();
@@ -273,7 +315,6 @@ public class SortShow extends JPanel {
 			// add elements to the correct bucket
 			for(int j = 0; j < lines_lengths.length; j++){
 				int digit = (lines_lengths[j] / (int)Math.pow(10.0, (double)i)) % 10;
-				System.out.println("line length: " + lines_lengths[j] + " digit: " + digit);
 				buckets[digit].add(lines_lengths[j]);
 			}
 
@@ -285,7 +326,10 @@ public class SortShow extends JPanel {
 					bucket++;
 				}
 				lines_lengths[j] = buckets[bucket].remove(0);
+
+				// update GUI
 				paintComponent(this.getGraphics());
+				// delay
 				delay(50);
 			}
 		}
