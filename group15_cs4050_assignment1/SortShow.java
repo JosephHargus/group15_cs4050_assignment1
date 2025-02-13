@@ -69,7 +69,35 @@ public class SortShow extends JPanel {
 			lines_lengths[j] = temp;
 		}
 		
-		//The selectionSort method
+	//Bubble Sort/////////////////////////////////////////////////////////////////////////////////
+		// implemented by Evan Trejo
+		public void BubbleSort(){
+			//get time when starting
+			Calendar start = Calendar.getInstance();
+
+			//Outer loop for iterating all elements
+			for(int i=0; i < total_number_of_lines - 1; i++){
+				//After outer loop, last element i is sorted so reduce loop range
+				for(int j=0; j < total_number_of_lines - (i-1); j++){
+
+					//if current element is greater than next element
+					if(lines_lengths[j] > lines_length[j+1]){
+						//swap current element with the next
+						swap(j,j+1);
+						//redraw lines
+						paintComponent(this.getGraphics());
+						//delay
+						delay(10);
+					}
+			}
+
+			//get time when ending
+			Calendar end = Calendar.getInstance();
+
+			//calc time taken for bubble sort
+			SortGUI.bubbleTime = end.getTime().getTime() - start.getTime().getTime();
+		}
+		//Selection Sort//////////////////////////////////////////////////////////////////////////////
 		// implemented by Joseph Hargus
 		public void SelectionSort() {
 			//getting the date and time when the selection sort starts
@@ -107,36 +135,43 @@ public class SortShow extends JPanel {
 
 			return min_index;
 		}
-	//Bubble Sort/////////////////////////////////////////////////////////////////////////////////
+		//Insertion Sort/////////////////////////////////////////////////////////////////////////////////
 		// implemented by Evan Trejo
-		public void BubleSort(){
+		public void InsertionSort(){
 			//get time when starting
 			Calendar start = Calendar.getInstance();
+			
+			//loop through elements starting from index 1 (2nd element)
+			for(int i = 1; i < total_number_of_lines, i++){
+				int currentValue = lines_length[i]; //value put into sorted portion
+				int j = i-1; //last index of sorted portion
 
-			//Outer loop for iterating all elements
-			for(int i=0; i < total_number_of_lines - 1; i++){
-				//After outer loop, last element i is sorted so reduce loop range
-				for(int j=0; j < total_number_of_lines - (i-1); j++){
+				//shift elements of sorted portion to the right to make room for currentValue
+				while(j >= 0 && lines_length[i] > currentValue){
+					lines_length[j+1] = lines_length[j];
+					j--;
+				}
 
-					//if current element is greater than next element
-					if(lines_lengths[j] > lines_length[j+1]){
-						//swap current element with the next
-						swap(j,j+1);
-						//redraw lines
-						paintComponent(this.getGraphics());
-						//delay
-						delay(10);
-					}
+				//insert currentValue into its correct position
+				lines_lengths[j+1] = currentValue;
+				
+				//redraw lines
+				paintComponent(this.getGraphics());
+
+				//delay
+				delay(10);
+			
 			}
 
 			//get time when ending
 			Calendar end = Calendar.getInstance();
 
-			//calc time taken for bubble sort
-			SortGUI.bubbleTime = end.getTime().getTime() - start.getTime().getTime();
+			//calc time taken for insertion sort
+			SortGUI.insertionTime = end.getTime().getTime() - start.getTime().getTime();
+			}
 		}
 
-	///////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////////////////
 		
 		//recursive merge sort method
 		public void R_MergeSort(){
