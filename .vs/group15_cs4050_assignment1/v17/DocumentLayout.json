@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\SortShow.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:group15_cs4050_assignment1\\SortShow.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\SortGUI.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:group15_cs4050_assignment1\\SortGUI.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\sample.iml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:group15_cs4050_assignment1\\sample.iml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SortShow.java",
+              "DocumentMoniker": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\SortShow.java",
+              "RelativeDocumentMoniker": "group15_cs4050_assignment1\\SortShow.java",
+              "ToolTip": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\SortShow.java",
+              "RelativeToolTip": "group15_cs4050_assignment1\\SortShow.java",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAEMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-12T23:20:38.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SortGUI.java",
+              "DocumentMoniker": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\SortGUI.java",
+              "RelativeDocumentMoniker": "group15_cs4050_assignment1\\SortGUI.java",
+              "ToolTip": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\SortGUI.java",
+              "RelativeToolTip": "group15_cs4050_assignment1\\SortGUI.java",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-12T23:20:32.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sample.iml",
+              "DocumentMoniker": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\sample.iml",
+              "RelativeDocumentMoniker": "group15_cs4050_assignment1\\sample.iml",
+              "ToolTip": "C:\\Users\\evant\\source\\repos\\group15_cs4050_assignment1\\group15_cs4050_assignment1\\sample.iml",
+              "RelativeToolTip": "group15_cs4050_assignment1\\sample.iml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-12T23:20:30.447Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
