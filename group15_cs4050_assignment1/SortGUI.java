@@ -25,6 +25,8 @@ public class SortGUI {
 	public static double quickTime = 0.0;
 
 	//Boolean variable that keep track of whether or not the sort has already been used
+	public boolean Bubble_Done = false;
+	public boolean Insertion_Done = false;
 	public boolean Selection_Done = false;
 	public boolean Recersive_Merge_Done = false;
 	public boolean Iterative_Merge_Done = false;
@@ -53,8 +55,8 @@ public class SortGUI {
 	//A public class that extends JFrame
 	public class MyScreen extends JFrame {
 		//Making buttons for each action, each with text on it displaying its use
-		JRadioButton bubbleSort = new JRadioButton("Bubble Sort");
-		JRadioButton insertionSort = new JRadioButton("Insertion Sort");
+		JRadioButton bubble = new JRadioButton("Bubble Sort");
+		JRadioButton insertion = new JRadioButton("Insertion Sort");
 		JButton scramble_button = new JButton("Scramble Lines");
 		JRadioButton selection = new JRadioButton("Selection");
 		JRadioButton rmerge = new JRadioButton("Merge Recursive");
@@ -109,8 +111,8 @@ public class SortGUI {
 			JPanel radio_button_selection_Panel = new JPanel(new GridLayout(4, 1, 3, 3));
 
 			//Adding each sort button to the radio_button_selection_Panel
-			radio_button_selection_Panel.add(bubbleSort);
-			radio_button_selection_Panel.add(insertionSort);
+			radio_button_selection_Panel.add(bubble);
+			radio_button_selection_Panel.add(insertion);
 			radio_button_selection_Panel.add(selection);
 			radio_button_selection_Panel.add(rmerge);
 			radio_button_selection_Panel.add(imerge);
@@ -188,28 +190,28 @@ public class SortGUI {
 			});
 			
 			// action listener for bubble sort
-			bubbleSort.addActionListener(new ActionListener() {
+			bubble.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					//sorting the array in the bubble sort method
 					sortArea.BubbleSort();
 					//amount of time taken for bubble sort
 					bubble_time_taken.setText((bubbleTime / 1000) + " Seconds");
 					//bubble sort has finished
-					Bubble_Sort_Done = true;
+					Bubble_Done = true;
 					//setting all booleans to false except for reset
 					Set_Available_Chooses(false, false, false, false, false, false, false, true);
 				}
 			});
 
 			// action listener for insertion sort
-			insertionSort.addActionListener(new ActionListener() {
+			insertion.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					//sorting the array in the insertion sort method
 					sortArea.InsertionSort();
 					//amount of time taken for insertion sort
 					insertion_time_taken.setText((insertionTime / 1000) + " Seconds");
 					//insertion sort has finished
-					Insertion_Sort_Done = true;
+					Insertion_Done = true;
 					//setting all booleans to false except for reset
 					Set_Available_Chooses(false, false, false, false, false, false, false, true);
 				}

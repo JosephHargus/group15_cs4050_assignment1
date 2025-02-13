@@ -78,17 +78,18 @@ public class SortShow extends JPanel {
 			//Outer loop for iterating all elements
 			for(int i=0; i < total_number_of_lines - 1; i++){
 				//After outer loop, last element i is sorted so reduce loop range
-				for(int j=0; j < total_number_of_lines - (i-1); j++){
+				for(int j=0; j < total_number_of_lines - (i-1); j++) {
 
 					//if current element is greater than next element
-					if(lines_lengths[j] > lines_length[j+1]){
+					if (lines_lengths[j] > lines_lengths[j + 1]) {
 						//swap current element with the next
-						swap(j,j+1);
+						swap(j, j + 1);
 						//redraw lines
 						paintComponent(this.getGraphics());
 						//delay
 						delay(10);
 					}
+				}
 			}
 
 			//get time when ending
@@ -97,6 +98,7 @@ public class SortShow extends JPanel {
 			//calc time taken for bubble sort
 			SortGUI.bubbleTime = end.getTime().getTime() - start.getTime().getTime();
 		}
+
 		//Selection Sort//////////////////////////////////////////////////////////////////////////////
 		// implemented by Joseph Hargus
 		public void SelectionSort() {
@@ -142,13 +144,13 @@ public class SortShow extends JPanel {
 			Calendar start = Calendar.getInstance();
 			
 			//loop through elements starting from index 1 (2nd element)
-			for(int i = 1; i < total_number_of_lines, i++){
-				int currentValue = lines_length[i]; //value put into sorted portion
+			for(int i = 1; i < total_number_of_lines; i++){
+				int currentValue = lines_lengths[i]; //value put into sorted portion
 				int j = i-1; //last index of sorted portion
 
 				//shift elements of sorted portion to the right to make room for currentValue
-				while(j >= 0 && lines_length[i] > currentValue){
-					lines_length[j+1] = lines_length[j];
+				while(j >= 0 && lines_lengths[i] > currentValue){
+					lines_lengths[j+1] = lines_lengths[j];
 					j--;
 				}
 
@@ -168,7 +170,7 @@ public class SortShow extends JPanel {
 
 			//calc time taken for insertion sort
 			SortGUI.insertionTime = end.getTime().getTime() - start.getTime().getTime();
-			}
+
 		}
 
 		///////////////////////////////////////////////////////////////////////////////////
@@ -416,8 +418,8 @@ public class SortShow extends JPanel {
 				}
 			//Drawing the now scrambled lines_lengths
 			paintComponent(this.getGraphics());
-		}
 			}
+		}
 		
 	
 		//This method colours the lines and prints the lines
@@ -457,6 +459,4 @@ public class SortShow extends JPanel {
 	        	Thread.currentThread().interrupt();
 	        }
 		}
-		
-	}
-
+}
