@@ -170,41 +170,83 @@ public class SortShow extends JPanel {
 			SortGUI.insertionTime = end.getTime().getTime() - start.getTime().getTime();
 		}
 
-		///////////////////////////////////////////////////////////////////////////////////
+	//Recursive Merge Sort/////////////////////////////////////////////////////////////////////////////////
+	//implemented by Kaitlyn Self
+	//recursive merge sort method
+	public void R_MergeSort(){
+		//getting the date and time when the recursive merge sort starts
+		Calendar start = Calendar.getInstance();
+		//assigning the size for the tempArray below
+		tempArray = new int[total_number_of_lines];
 
-		//recursive merge sort method
-		public void R_MergeSort(){
-			//getting the date and time when the recursive merge sort starts
-			Calendar start = Calendar.getInstance();
-			//assigning the size for the tempArray below
+		//initial MergeSort increments
+		R_MergeSort(0, total_number_of_lines-1);
 
-			//You need to complete this part.
+		Calendar end = Calendar.getInstance();
+		//getting the time it took for the iterative merge sort to execute
+		//subtracting the end time with the start time
+		SortGUI.rmergeTime = end.getTime().getTime() - start.getTime().getTime();
 
-			Calendar end = Calendar.getInstance();
-			//getting the time it took for the iterative merge sort to execute
-			//subtracting the end time with the start time
-	        SortGUI.rmergeTime = end.getTime().getTime() - start.getTime().getTime();
+	}
 
+	//recursive merge sort method
+	public void R_MergeSort(int first, int last){
+		//assigning midpoint
+		int mid = (first + last) / 2;
+
+		if(first < last) {
+			//dividing until length is 1
+			R_MergeSort(first, mid);
+			//System.out.println("First end reached");
+			R_MergeSort(mid + 1, last);
+			R_Merge(first,mid,last);
+
+			paintComponent(this.getGraphics());
+			//Causing a delay for 10ms
+			delay(10);
 		}
 
-		//recursive merge sort method
-		public void R_MergeSort(int first, int last){
-			if(first < last){
+	}
 
-				//You need to complete this part.
+	//recursive merge sort method
+	public void R_Merge(int first, int mid, int last){
+		//divvying up the list to be merged
+		int start1 = first;
+		int end1 = mid;
+		int start2 = mid + 1;
+		int end2 = last;
 
-				//Causing a delay for 10ms
-				//delay(10);
+		//merging the two subarrays
+		int index = start1;
+		for (; start1 <= end1 && start2 <= end2; index++) {
+			if (lines_lengths[start1] <= lines_lengths[start2]) {
+				tempArray[index] = lines_lengths[start1];
+				start1++;
+				//System.out.println("start1 added");
+			}
+			else if (lines_lengths[start1] > lines_lengths[start2]) {
+				tempArray[index] = lines_lengths[start2];
+				start2++;
 			}
 		}
 
-
-		//recursive merge sort method
-		public void R_Merge(int first, int mid, int last){
-
-			//You need to complete this part.
-
+		//emptying array 1
+		for (; start1 <= end1; index++) {
+			tempArray[index] = lines_lengths[start1];
+			start1++;
 		}
+
+		//emptying array 2
+		for (; start2 <= end2; index++) {
+			tempArray[index] = lines_lengths[start2];
+			start2++;
+		}
+
+		for (index = first; index <= last; index++) {
+			lines_lengths[index] = tempArray[index];
+		}
+
+	}
 
 
 	//////////////////////////////////////////////////////////////////////////////////////////
