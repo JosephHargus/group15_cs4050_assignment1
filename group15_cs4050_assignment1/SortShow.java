@@ -447,8 +447,25 @@ public class SortShow extends JPanel {
 	//Shell Sort//////////////////////////////////////////////////////////////////////////
 	//implemented by Kaitlyn Self
 	public void ShellSort(){
-			//setting time start on activation
-			Calendar start = Calendar.getInstance();
+		//setting time start on activation
+		Calendar start = Calendar.getInstance();
+
+		//determining initial space
+		int space = total_number_of_lines / 4;
+		for (; space >=1 ; space--) {
+			for (int i = 0; i < total_number_of_lines; i=i+space){
+				for (int j; j > 0; j-=space){
+
+				}
+			}
+		}
+
+		//checking datetime when shellSort ends
+		Calendar end = Calendar.getInstance();
+
+		//subtracting end - start to find shellTime
+		SortGUI.shellTime = end.getTime().getTime() - start.getTime().getTime();
+
 	}
 
 	//Helper Functions////////////////////////////////////////////////////////////////////
