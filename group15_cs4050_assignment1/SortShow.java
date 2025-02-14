@@ -452,11 +452,24 @@ public class SortShow extends JPanel {
 
 		//determining initial space
 		int space = total_number_of_lines / 4;
-		for (; space >=1 ; space--) {
-			for (int i = 0; i < total_number_of_lines; i=i+space){
-				for (int j; j > 0; j-=space){
 
+		//for loop decreasing the space by 1 each round
+		for (; space >=1 ; space--) {
+			//going through the given interval
+			for (int i = space; i < total_number_of_lines; i=i+space){
+				int currentVal = lines_lengths[i];
+				int j = i - space;
+				//moving elements as needed
+				while (j >= 0 && lines_lengths[j] > currentVal) {
+					lines_lengths[j + space] = lines_lengths[j];
+					j=j-space;
 				}
+
+				lines_lengths[j + space] = currentVal;
+				//redrawing the lines
+				paintComponent(this.getGraphics());
+				//time delay between intervals
+				delay(10);
 			}
 		}
 

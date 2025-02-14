@@ -284,7 +284,7 @@ public class SortGUI {
 			});
 
 			//Creating an action listener for Shell button
-			quick.addActionListener(new ActionListener() {
+			shell.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					//sorting the array in the quick sort method
 					sortArea.ShellSort();
