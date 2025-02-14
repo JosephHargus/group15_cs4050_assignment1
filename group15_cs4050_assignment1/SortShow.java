@@ -444,6 +444,13 @@ public class SortShow extends JPanel {
 		SortGUI.radixTime = end.getTime().getTime() - start.getTime().getTime();
 	}
 
+	//Shell Sort//////////////////////////////////////////////////////////////////////////
+	//implemented by Kaitlyn Self
+	public void ShellSort(){
+			//setting time start on activation
+			Calendar start = Calendar.getInstance();
+	}
+
 	//Helper Functions////////////////////////////////////////////////////////////////////
 
 		//This method resets the window to the scrambled lines display
