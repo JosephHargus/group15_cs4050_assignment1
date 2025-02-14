@@ -209,7 +209,7 @@ public class SortShow extends JPanel {
 
 				paintComponent(this.getGraphics());
 				//Causing a delay for 10ms
-				//delay(10);
+				delay(10);
 			}
 
 		}
